@@ -1,0 +1,19 @@
+﻿<Application x:Class="PercentCalcMvvm.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:PercentCalcMvvm"
+             xmlns:views="clr-namespace:PercentCalcMvvm.Views"
+             xmlns:viewmodels="clr-namespace:PercentCalcMvvm.ViewModels"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <DataTemplate DataType="{x:Type viewmodels:PercentViewModel}">
+            <views:Percent/> 
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:PercentageViewModel}">
+            <views:Percentage/> 
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:SumViewModel}">
+            <views:Sum/> 
+        </DataTemplate>
+    </Application.Resources>
+</Application>
