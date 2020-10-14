@@ -21,7 +21,8 @@
         <Style TargetType="TextBox">
             <Setter Property="Width" Value="100"/>
             <Setter Property="Height" Value="40"/>
-            <Setter Property="Padding" Value="8 3"/>
+            <Setter Property="Padding" Value="8"/>
+            <Setter Property="FontSize" Value="16"/>
         </Style>
 
         <!--TextBlock style-->
@@ -33,7 +34,7 @@
         <!--style of content button-->
         <Style TargetType="Button" BasedOn="{StaticResource MenuButtons}">
             <Setter Property="Width" Value="300"/>
-            <Setter Property="Height" Value="30"/>
+            <Setter Property="Height" Value="50"/>
             <Setter Property="Margin" Value="0 50 "/>
             <Setter Property="Margin" Value="0 40"/>
         </Style>
@@ -48,8 +49,14 @@
         
         <!--Result Display Styles-->
         <Style TargetType="TextBlock" x:Key="ResultStyle">
+            <Setter Property="Background" Value="Wheat"/>
             <Setter Property="Width" Value="300"/>
             <Setter Property="Height" Value="100"/>
+            <Setter Property="FontSize" Value="40"/>
+            <Setter Property="TextAlignment" Value="Center" />
+            <Setter Property="Padding" Value="0 20" />
+            <Setter Property="Margin" Value="0 20 0 0" />
+
         </Style>
 
     </Window.Resources>
@@ -60,9 +67,9 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <StackPanel Background="#FFBFC5B5">
-            <Button Style="{StaticResource MenuButtons}" Content="Get Percent"/>
-            <Button Style="{StaticResource MenuButtons}" Content="Get Percentage"/>
-            <Button Style="{StaticResource MenuButtons}" Content="Get the hole sum"/>
+            <Button Style="{StaticResource MenuButtons}" Content="Get Percent" Command="{Binding OpenSelectedView}" CommandParameter="Percent"/>
+            <Button Style="{StaticResource MenuButtons}" Content="Get Percentage" Command="{Binding OpenSelectedView}" CommandParameter="Percentage"/>
+            <Button Style="{StaticResource MenuButtons}" Content="Get the hole sum" Command="{Binding OpenSelectedView}" CommandParameter="Sum"/>
         </StackPanel>
         <UserControl  Grid.Column="1" Content="{Binding SelectedPage}" />
     </Grid>
