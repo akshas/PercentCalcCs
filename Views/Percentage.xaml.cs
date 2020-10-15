@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PercentCalcMvvm.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace PercentCalcMvvm.Views
         public Percentage()
         {
             InitializeComponent();
+            DataContext = new PercentageViewModel();
         }
     }
 }
